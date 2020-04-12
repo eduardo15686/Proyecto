@@ -1,0 +1,27 @@
+<% include _header %>
+
+<%
+      if(alert==1){
+          %>
+          <div class="alert alert-danger" role = "alert">NO seagrego porque <%=tError%></div>
+          <%
+      }
+%>
+
+<div class="row container">
+    <div class="col-md-12">
+        <form action="login" method="post">
+            <div class="form-group">
+                <label for="">email</label>
+                <input type="text" class="form-control" name="user">
+            </div>
+            <div class="form-group">
+                <label for="">password</label>
+                <input type="password" class="form-control" name="password">
+            </div>
+            <button class="btn btn-primary">ingresar</button>
+        </form>
+    </div>
+</div>
+
+<% include _footer %>

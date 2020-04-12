@@ -1,0 +1,18 @@
+
+    <div class="container" style="margin-right: 320px;">
+        <div class="right">
+          <div class="login">Iniciar Sesion</div>
+          <div id="mensajeAlertaUsuarios"></div>
+        </div>
+        <div class="right">
+          <div class="form">
+            <label for="user" class="">Nombre de Usuario</label>
+            <input [(ngModel)]="username" type="text" name="nombre" id="nombre" placeholder="Usuario" class="form-control form-control-sm">
+            <label for="pass" class="">Contraseña</label>
+            <input  [(ngModel)]="password" type="password" id="password" name="password" placeholder="Contraseña">
+            <input (click)="login()" type="submit" id="submit" value="Iniciar Sesión" style="color: #0BCAC0;">
+            <br>
+            <input (click)="register()" type="button" id="regis" value="Registrarse" style="color: white;">
+          </div>
+        </div>
+      </div>

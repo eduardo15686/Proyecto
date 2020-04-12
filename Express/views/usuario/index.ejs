@@ -1,0 +1,54 @@
+<% include _header %>
+    <%if (alert!=0) {%>
+        <div id="Alert" class="alert <%= color %>">
+            <%= alert %>
+                <a id="close" href="#" class="close" data-dismiss="alert">&times;</a>
+        </div>
+        <%;}%>
+            <h1>
+                <%= title %>
+            </h1>
+            <p>Vista de usuarios</p>
+            <h2>Lista de usuarios</h2>
+            <table class="table table-light">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Rol</th>
+                    <th></th>
+                </tr>
+                <%
+  if(coleccion)
+  {
+    coleccion.forEach(function(usuario)
+    {%>
+                    <tr>
+                        <td>
+                            <%= usuario.nombre %>
+                        </td>
+                        <td>
+                            <%= usuario.email %>
+                        </td>
+                        <td>
+                            <%= usuario.password %>
+                        </td>
+                        <td>
+                            <%= usuario.rol %>
+                        </td>
+                    </tr>
+                    <%}); } %>
+
+            </table>
+            <script src="/jquery/jquery.min.js"></script>
+            <script src="/js/bootstrap.min.js"></script>
+
+            <%if (alert!=0) {%>
+                <script type="text/javascript">
+                    $('#close').click(function() {
+                        $('#Alert').hide('fade');
+                    })
+                </script>
+                <%;}%>
+
+                    <% include _footer %>

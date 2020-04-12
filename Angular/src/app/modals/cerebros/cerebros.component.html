@@ -1,0 +1,81 @@
+<div class="modal fade" id="modalCerebro" #modal tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Agregar cerebro</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="mensajeAlertaGuardarCerebros"></div>
+                <section class="card-body"><h5 class="card-title">Datos del cerebro</h5>
+                    <div class="position-relative form-group"><label for="Flavor" class="">Sabor</label><select [(ngModel)]="sabor" name="select" id="sabor" class="form-control form-control-sm">
+                        <option disabled="true" selected >- Seleccione un sabor -</option>
+                        <option>Chocolate</option>
+                        <option>Vainilla</option>
+                        <option>Fresa</option>
+                    </select></div>
+                    <div class="position-relative form-group"><label for="Description" class="">Descripcion</label><input [(ngModel)]="descripcion" type="text" name="descripcion" id="descripcion" placeholder="Ej: Con sabor a pistache" class="form-control form-control-sm"></div>
+                    <div class="position-relative form-group"><label for="IQ" class="">IQ</label><input [(ngModel)]="iq" type="number" name="iq" id="iq" placeholder="Ej: 80" class="form-control form-control-sm"></div>
+                    <div class="position-relative form-group"><label for="Picture" class="">Foto</label><input [(ngModel)]="foto" type="text" name="foto" id="foto" placeholder="Ej: foto.jpg" class="form-control form-control-sm"></div>
+                </section>      
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss='alert' class="mt-1 btn btn-primary" (click)="guardarCerebro()">Guardar cambios</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalEliminarCerebro" #modalEliminar tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Eliminar cerebro</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="mensajeAlertaBorrarCerebros"></div>
+                ¿Esta seguro de eliminar el cerebro?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="mt-1 btn btn-danger" (click)="borrarCerebro()">Eliminar cerebro</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalActualizarCerebro" #modalActualizar tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Actualizar cerebro</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="mensajeAlertaActualizarCerebros"></div>
+                <section class="card-body"><h5 class="card-title">Datos del cerebro</h5>
+                    <div class="position-relative form-group"><label for="Flavor" class="">Sabor</label><select [(ngModel)]="sabor" name="select" id="saborActualizar" class="form-control form-control-sm">
+                        <option disabled="true" selected >- Seleccione -</option>
+                        <option>Chocolate</option>
+                        <option>Vainilla</option>
+                        <option>Fresa</option>
+                    </select></div>
+                    <div class="position-relative form-group"><label for="Description" class="">Descripcion</label><input [(ngModel)]="descripcion" type="text" name="descripcion" id="descripcionActualizar" placeholder="Ej: Con sabor a pistache" class="form-control form-control-sm"></div>
+                    <div class="position-relative form-group"><label for="IQ" class="">IQ</label><input [(ngModel)]="iq" type="number" name="iq" id="iq" placeholder="Ej: 80" class="form-control form-control-sm"></div>
+                    <div class="position-relative form-group"><label for="Picture" class="">Foto</label><input [(ngModel)]="foto" type="text" name="foto" id="fotoActualizar" placeholder="Ej: foto.jpg" class="form-control form-control-sm"></div>
+                </section>      
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button"  class="mt-1 btn btn-primary" (click)="actualizarCerebro()">Guardar cambios</button>
+            </div>
+        </div>
+    </div>
+</div>

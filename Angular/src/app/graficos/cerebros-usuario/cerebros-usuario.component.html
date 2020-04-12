@@ -1,0 +1,20 @@
+
+<div class="col-md-8 offset-2"> 
+    <div>
+        <div>
+            <h1 class="text-center">Cerebros que haz añadido</h1>
+        </div>
+        <br>
+        <div style="display: block">
+            <canvas baseChart
+            [data]="doughnutChartData"
+            [labels]="doughnutChartLabels"
+            [chartType]="doughnutChartType">
+            </canvas>
+        </div>
+        
+    </div>
+</div>
+<div>
+    <button mat-button mat-raised-button class="btn btn-success" (click)="actualizarDatos()">Actualizar Datos</button>
+</div>

@@ -1,0 +1,28 @@
+<div class="card-body"><h5 class="card-title">Zombies</h5>
+    <table class="mb-0 table table-striped">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Tipo</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let zombie of zombies | async; let i = index">
+            <th scope="row"> {{ i+1 }} </th>
+            <td>{{ zombie.name }}</td>
+            <td>{{ zombie.email }}</td>
+            <td>{{ zombie.type }}</td>
+            <td>
+                <button (click)="guardarDatos(zombie._id,zombie.name,zombie.email,zombie.type)" type="button" class="btn mr-2 mb-2 btn-primary" data-toggle="modal" data-target="#modalActualizar">Editar Zombie <i class="fas fa-edit" title="Editar"></i></button>
+                <button (click)="guardarId(zombie._id)" type="button" class="btn mr-2 mb-2 btn-danger" data-toggle="modal" data-target="#modalEliminar">Eliminar Zombie <i class="fas fa-trash" title="Editar"></i></button>
+            </td> 
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <button type="button" class="btn mr-2 mb-2 btn-outline-success" data-toggle="modal" data-target="#modal">Agregar Zombie</button>
+</div>
+

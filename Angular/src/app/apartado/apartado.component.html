@@ -1,0 +1,55 @@
+<div class="card-body"><h5 class="card-title">Zombies</h5>
+    <table class="mb-0 table table-striped">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Sabor</th>
+            <th>Cantidad</th>
+            <th>Categoria</th>
+            <th>Fecha De Pedido</th>
+            <th>Fecha De Entrega</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let apartado of apartados | async; let i = index">
+            <th scope="row"> {{ i+1 }} </th>
+            <td>{{ apartado.flavor }}</td>
+            <td>{{ apartado.quantity }}</td>
+            <td>{{ apartado.category }}</td>
+            <td>{{ apartado.date | date:'dd-MM-yyyy'}}</td>
+            <td>{{ apartado.arrive | date:'dd-MM-yyyy'}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    
+</div>
+<br>
+
+
+
+<fieldset class="form-group">
+    <label>Selecciona el sabor</label>
+    
+
+    <label for="cerebroSabor" class="">Seleccionar</label>
+        <select [(ngModel)]="sabor" multiple="" name="brainFlavor" id="cerebroSabor" class="form-control">
+            <option *ngFor="let cerebro of cerebros | async; let i = index" value="{{cerebro.flavor}}">{{ cerebro.flavor }} | {{ cerebro.description }}</option>
+        </select>
+    <div>
+        <br>
+        <label>Selecciona la categoria</label>
+        <select [(ngModel)]="categoria" class="form-control">
+            <option>Bronze</option>
+            <option>Silver</option>
+            <option>Gold</option>
+         </select>
+    </div>
+     <br>
+     <div class="position-relative form-group"><label for="CANTIDAD" class="">Cantidad</label>
+        <input [(ngModel)]="cantidad" type="number" name="cantidad" id="cantidad" placeholder="cantidad de cereboros" class="form-control form-control-sm">
+    </div>
+</fieldset>
+<p>{{fecha | date:'dd-MM-yyyy'}}</p>
+<p>fecha una semana {{fechaDentroDeUnaSemana | date:'dd-MM-yyyy'}}</p>
+<button type="button" data-dismiss='alert' class="mt-1 btn btn-primary" (click)="guardarApartado()">Guardar cambios</button>

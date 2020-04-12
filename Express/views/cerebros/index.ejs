@@ -1,0 +1,32 @@
+<% include ../_header %>   
+<h1><%= title %></h1>
+<h4>Lista de cerebros</h4>    
+<table class="table table-striped">
+    <tr>
+        <th>Sabor</th>
+        <th>Descripción</th>
+        <th>IQ</th>
+        <th>Imagen</th>
+        <th>Acciones</th>
+    </tr>
+    <%
+        if(coleccion){
+        coleccion.forEach(function(cerebro){
+    %>
+    <tr>
+        <td><%= cerebro.flavor %></td>
+        <td><%= cerebro.description %></td>
+        <td><%= cerebro.iq %></td>
+        <td><%= cerebro.picture %></td>
+        <td>
+            <a href="/cerebros/edit/<%= cerebro.id %>"><i class="fas fa-edit" title="Editar"></i></a>     
+            <a href="/cerebros/delete/<%= cerebro.id %>"><i class="fas fa-trash text-danger" title="Eliminar"></i></a>
+        </td>
+    </tr>
+    <%
+        });
+        }
+    %>
+</table>
+
+<% include ../_footer %>
